@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container .item {
+            background-color: blue;
+        }
+        .main-container .item {
+            background-color: red;
+            padding: 10px;
+        }
+        .button {
+            background-color: greenyellow;
+            border: 0;
+            padding: 10px;
+        }
+        .button-active {
+            background-color: blueviolet;
+        }
+        .button-danger{
+            background-color: red;
+        }
+        .item1 + .item2 {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <!-- 1. item เป็นลูกของ Container -->
+    <div class="container">
+        Container
+        <div class="item">
+            Item
+        </div>
+    </div>
+    <!-- 2. item เป็นลูกของ Container แค่ชั้นเดียว -->
+    <div class="main-container">
+        Container
+        <div class="item">
+            Item
+            <div class="item">
+                Item 1
+            </div>
+            <div class="item">
+                Item 2
+            </div>
+            <div class="item">
+                Item 3
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. มี class ติดกัน -->
+    <button class="button">ปุ่ม</button>
+    <button class="button-warning">ปุ่ม</button>
+    <button class="button-danger">ปุ่ม</button>
+
+    <!-- 4. เพื่อนกัน (adjacent) -->
+     <div class="text" name="username"></div>
+</body>
+</html>
