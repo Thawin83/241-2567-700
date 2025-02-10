@@ -1,91 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      @font-face {
-        font-family: "Kanit";
-        src: url("./Kanit/Kanit-Regular.ttf");
-      }
-      body {
-        font-family: "Kanit";
-      }
-      .container {
-        width: 400px;
-        margin-left: auto;
-        margin-right: auto;
-        background-color: rgb(240, 255, 240);
-        padding: 20px;
-      }
-      .header {
-        font-size: 30px;
-        text-align: 20px;
-        margin-bottom: 20px;
-      }
-      .header-form {
-        width: 140px;
-      }
-      .flex {
-        display: flex;
-      }
-      .form-input {
-        margin-bottom: 10px;
-      }
-      input.form,
-      textarea {
-        border: 1px solid #ccc;
-        width: 100%;
-      }
-      .center {
-        text-align: center;
-      }
-      .button {
-        border: 0;
-        width: 100%;
-        height: 40px;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <div class="header">Register form</div>
-      <div class="flex form-input">
-        <div class="header-form">ชื่อ</div>
-        <input class="form" type="text" />
-      </div>
-      <div class="flex form-input">
-        <div class="header-form">นามสกุล</div>
-        <input class="form" type="text" /> <br />
-      </div>
-      <div class="flex form-input">
-        <div class="header-form">อายุ</div>
-        <input class="form" type="number" min="0" max="100" />
-      </div>
+<html>
+<head>
 
-      <div class="flex gender form-input">
-        <div class="header-form">เพศ</div>
-        <div>
-          <input name="gender" type="radio" /> ชาย
-          <input name="gender" type="radio" /> หญิง
-          <input name="gender" type="radio" /> ไม่ระบุ
+    <title>Form Register</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    
+<div>
+    <div class="container">
+        <div class="header" >
+            Register form
         </div>
-      </div>
-      <div class="form-input">
-        งานอดิเรก
-        <div><input name="interest" type="checkbox" /> อ่านหนังสือ</div>
-        <div><input name="interest" type="checkbox" /> ดูหนัง</div>
-        <div><input name="interest" type="checkbox" /> ฟังเพลง</div>
-      </div>
-      <div class="form-input">
-        คำอธิบาย
-        <textarea></textarea>
-      </div>
-      <div class="center">
-        <button class="button">ส่งข้อมูล</button>
-      </div>
+
+        <div class="flex form-input">
+            <div class="header-form">ชื่อ </div>
+            <input class="form" name="firstname" type="text">
+        </div>
+        <div class="flex form-input">
+            <div class="header-form">นามสกุล</div> 
+            <input class="form" name="lastname"  type="text">
+        </div>
+        <div class="flex form-input">
+            <div class="header-form">อายุ </div> 
+            <input class="form" name="age" type="number" min="0" max="100">
+        </div>
+        
+    <div class="flex gender form-input">
+        <div class="header-form">เพศ</div>    
+            <div>
+            <input name="gender" type="radio"> ชาย 
+            </div>
+            <div>     
+            <input name="gender" type="radio"> หญิง
+            </div>
+            <div>
+            <input name="gender" type="radio"> อื่นๆ
+            </div>     
     </div>
-    >
-  </body>
+    <div class="form-input">
+        <div class="header-form">งานอดิเรก</div>
+        <div>
+            <input name="interest" type="checkbox" value="อ่านหนังสือ"> อ่านหนังสือ
+        </div>
+        <div>
+            <input name="interest" type="checkbox" value="ดูหนัง"> ดูหนัง
+        </div>
+        <div>
+        <input name="interest" type="checkbox" value="ฟังเพลง"> ฟังเพลง
+        </div>
+    </div>
+    <div class="form-input">
+        คำอธิบาย <br>
+        <textarea name="description"></textarea>
+    </div>
+    <div class="center">
+        <button onclick="submitData()" class="button">ส่งข้อมูล</button>        
+    </div>
+    
+    <script src="index.js"></script>
+</div>
+
+    
+</body>
 </html>

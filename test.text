@@ -1,0 +1,4 @@
+docker run -p 80:80 nginx // run nginx on port 80
+docker ps --all // list all containers
+docker rm <containers_id> // remove container
+docker run -d -p 8070:80 nginx

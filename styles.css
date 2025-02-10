@@ -1,0 +1,52 @@
+@font-face{
+    font-family: 'Kanit';
+    src: url('./Kanit/Kanit-Regular.ttf');
+}
+body{
+    font-family: 'Kanit';
+}
+.container{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: azure;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.header{
+    font-size: 30px;
+    text-align: 20px;
+    margin-bottom: 20px;
+}
+.header-form{
+    width: 140px;
+}
+.flex{
+    display: flex;
+}
+.form-input{
+    margin-bottom: 10px;
+}
+input.form, textarea {
+    border: 1px solid #ccc;
+    width : 100%
+}
+.center{
+    text-align: center;
+}
+.button{
+    border: 0;
+    width: 50%;
+    height: 40px;
+}
+@media screen and (max-width: 768px) {
+    .flex {
+        flex-direction: column;
+    }
+    .header {
+        font-size: 24px;
+    }
+    .button {
+        width: 100%;
+    }   
+}
