@@ -1,67 +1,68 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 
-    <title>Form Register</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <link rel="stylesheet" href="styles.css">
 
 </head>
 <body>
-    
-<div>
     <div class="container">
-        <div class="header" >
+        <div class="header">
             Register form
         </div>
-
         <div class="flex form-input">
-            <div class="header-form">ชื่อ </div>
+            <div class="header-form">ชื่อ</div>
             <input class="form" name="firstname" type="text">
         </div>
         <div class="flex form-input">
-            <div class="header-form">นามสกุล</div> 
-            <input class="form" name="lastname"  type="text">
+            <div class="header-form">นามสกุล</div>
+            <input class="form" name="lastname" type="text"> 
         </div>
         <div class="flex form-input">
-            <div class="header-form">อายุ </div> 
-            <input class="form" name="age" type="number" min="0" max="100">
+            <div class="header-form">อายุ</div>
+            <input class ="form" name="age" type="number" min="0" max="100">
         </div>
-        
-    <div class="flex gender form-input">
-        <div class="header-form">เพศ</div>    
-            <div>
-            <input name="gender" type="radio"> ชาย 
-            </div>
-            <div>     
-            <input name="gender" type="radio"> หญิง
-            </div>
-            <div>
-            <input name="gender" type="radio"> อื่นๆ
-            </div>     
-    </div>
-    <div class="form-input">
-        <div class="header-form">งานอดิเรก</div>
-        <div>
-            <input name="interest" type="checkbox" value="อ่านหนังสือ"> อ่านหนังสือ
-        </div>
-        <div>
-            <input name="interest" type="checkbox" value="ดูหนัง"> ดูหนัง
-        </div>
-        <div>
-        <input name="interest" type="checkbox" value="ฟังเพลง"> ฟังเพลง
-        </div>
-    </div>
-    <div class="form-input">
-        คำอธิบาย <br>
-        <textarea name="description"></textarea>
-    </div>
-    <div class="center">
-        <button onclick="submitData()" class="button">ส่งข้อมูล</button>        
-    </div>
-    
-    <script src="index.js"></script>
-</div>
 
-    
+        <div class="flex gender form-input">
+            <div class="header-form">เพศ</div>
+            <div>
+                <input name="gender" type="radio" value="ชาย"> ชาย
+            </div>
+            <div>
+                <input name="gender" type="radio" value="หญิง"> หญิง
+            </div>
+            <div>
+                <input name="gender" type="radio" value="อื่นๆ"> อิ่นๆ
+            </div>
+        </div>
+        <div class="form-input">
+            งานอดิเรก
+            <div>
+                <input name="interest" type="checkbox" value="อ่านหนังสือ"> อ่านหนังสือ
+            </div> 
+            <div>
+                <input name="interest" type="checkbox" value="ดูหนัง"> ดูหนัง
+            </div>
+            <div>
+                <input name="interest" type="checkbox" value="ฟังเพลง"> ฟังเพลง
+            </div>
+        </div>
+        <div class="form-input">
+            คำอธิบาย
+            <textarea name="description"></textarea>
+        </div>
+
+        <div id=message class="message"></div>  
+        
+        
+        <div class="center">
+            <button onclick="submitData()" class="button">ส่งข้อมูล</button>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <script src ="index.js"></script>
 </body>
 </html>

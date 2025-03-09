@@ -1,25 +1,28 @@
-@font-face{
+<<<<<<< HEAD
+@font-face {
     font-family: 'Kanit';
     src: url('./Kanit/Kanit-Regular.ttf');
 }
 body{
     font-family: 'Kanit';
+    font-size: 14px;
 }
 .container{
     width: 100%;
+    max-width: 640px;
     margin-left: auto;
     margin-right: auto;
-    background-color: azure;
+    background: azure;
     padding: 20px;
     box-sizing: border-box;
 }
 .header{
     font-size: 30px;
-    text-align: 20px;
+    text-align: center;
     margin-bottom: 20px;
 }
 .header-form{
-    width: 140px;
+    width: 200px;
 }
 .flex{
     display: flex;
@@ -27,26 +30,93 @@ body{
 .form-input{
     margin-bottom: 10px;
 }
-input.form, textarea {
+input.form, textarea{
     border: 1px solid #ccc;
-    width : 100%
+    width: 100%;
 }
 .center{
     text-align: center;
 }
 .button{
-    border: 0;
+    border: 10%;
     width: 50%;
     height: 40px;
 }
-@media screen and (max-width: 768px) {
+.message{
+    margin-top: 20px;
+    padding: 10px;
+    background: #f9f9f9;
+}
+.message.success{
+    color: green;
+}
+.message.danger{
+    color: red;
+}   
+@media screen and (max-width: 768px){
     .flex {
         flex-direction: column;
     }
-    .header {
+    .header{
         font-size: 24px;
     }
-    .button {
+    .button{
         width: 100%;
-    }   
+    }
+=======
+@font-face {
+    font-family: 'Kanit';
+    src: url('./Kanit/Kanit-Regular.ttf');
+}
+body{
+    font-family: 'Kanit';
+    font-size: 14px;
+}
+.container{
+    width: 100%;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+    background: azure;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.header{
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.header-form{
+    width: 200px;
+}
+.flex{
+    display: flex;
+}
+.form-input{
+    margin-bottom: 10px;
+}
+input.form, textarea{
+    border: 1px solid #ccc;
+    width: 100%;
+}
+.center{
+    text-align: center;
+}
+.button{
+    border: 10%;
+    width: 50%;
+    height: 40px;
+}
+
+@media screen and (max-width: 768px){
+    .flex {
+        flex-direction: column;
+    }
+    .header{
+        font-size: 24px;
+    }
+    .button{
+        width: 100%;
+    }
+>>>>>>> 554c9ab185da5f48dd991cad9166eef5f5a4c1aa
 }
