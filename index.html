@@ -9,6 +9,7 @@
 
 </head>
 <body>
+    <a href="user.html">Go to User management</a>
     <div class="container">
         <div class="header">
             Register form
@@ -23,26 +24,27 @@
         </div>
         <div class="flex form-input">
             <div class="header-form">อายุ</div>
-            <input class ="form" name="age" type="number" min="0" max="100">
+            <input class="form" name="age" type="number" min="0" max="100">
         </div>
-
         <div class="flex gender form-input">
             <div class="header-form">เพศ</div>
-            <div>
-                <input name="gender" type="radio" value="ชาย"> ชาย
-            </div>
-            <div>
-                <input name="gender" type="radio" value="หญิง"> หญิง
-            </div>
-            <div>
-                <input name="gender" type="radio" value="อื่นๆ"> อิ่นๆ
+            <div class="flex">
+                <div>
+                    <input name="gender" type="radio" value="ชาย"> ชาย
+                </div>
+                <div>
+                    <input name="gender" type="radio" value="หญิง"> หญิง
+                </div>
+                <div>
+                    <input name="gender" type="radio" value="อื่นๆ"> อื่นๆ
+                </div>
             </div>
         </div>
         <div class="form-input">
             งานอดิเรก
             <div>
                 <input name="interest" type="checkbox" value="อ่านหนังสือ"> อ่านหนังสือ
-            </div> 
+            </div>
             <div>
                 <input name="interest" type="checkbox" value="ดูหนัง"> ดูหนัง
             </div>
@@ -55,14 +57,13 @@
             <textarea name="description"></textarea>
         </div>
 
-        <div id=message class="message"></div>  
-        
+        <div id=message class="message" ></div>
         
         <div class="center">
-            <button onclick="submitData()" class="button">ส่งข้อมูล</button>
+                <button onclick="submitData()" class="button">ส่งข้อมูล</button>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
-    <script src ="index.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>
