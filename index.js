@@ -1,7 +1,7 @@
 //const { count } = require("console");
 //const { response } = require("express");
 const BASE_URL = 'http://localhost:8000'
-let mode = 'CREATE' //default moded
+let mode = 'CREATE' //default mode
 let selectedID = ''
 
 window.onload = async () => {
@@ -103,18 +103,6 @@ const submitData = async () => {
 
     console.log('submitData', userData);
 
-    /*
-        const errors = validateData(userData)
-        if (errors.length > 0) { 
-            //มี error
-            throw {
-                message : "กรุณากรอกข้อมูลให้ครบถ้วน",
-                errors: errors
-            } 
-
-        }
-    */  
-
         let message = 'บันทึกข้อมูลเรียบร้อย'
         if (mode == 'CREATE') {
             const response = await axios.post(`${BASE_URL}/users`, userData)
@@ -128,16 +116,7 @@ const submitData = async () => {
 
         messageDOM.innerText = message
         messageDOM.className = "message sussess"
-
-        // if (mode === 'CREATE') {
-        //     const response = await axios.post(`${BASE_URL}/users`, userData);
-        //     console.log('response', response.data);
-        // } else {
-        //     const response = await axios.put(`${BASE_URL}/users/${selectedID}`, userData);
-        //     message = 'แก้ไขข้อมูลเรียบร้อย';
-        //     console.log('response', response.data);
-        // }
-        
+      
     } catch (error) {
         console.log('error message', error.message);
         console.log('error', error.errors);
