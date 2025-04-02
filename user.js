@@ -1,61 +1,52 @@
-const BASE_URL = 'http://localhost:8000';
+const BASE_URL = 'http://localhost:8000'; // URL ของ API ของคุณ
 
 window.onload = async () => {
-    await loadData();
-};
-
-const loadData = async () => {
-    console.log('User page loaded');
-
     try {
-        // 1. Load users ทั้งหมด
-        const response = await axios.get(`${BASE_URL}/users`);
+        const response = await axios.get(`${BASE_URL}/users`); // ดึงข้อมูลผู้ใช้ทั้งหมด
         const users = response.data;
-        console.log(users);
 
-        // 2. ค้นหา table body และเคลียร์ข้อมูลเก่า
+        // ค้นหา tbody ของตาราง
         const tableBody = document.getElementById('userTableBody');
-        tableBody.innerHTML = '';
 
+        // แสดงข้อมูลผู้ใช้ในตาราง
         users.forEach(user => {
             const row = document.createElement('tr');
-
-            // คอลัมน์ข้อมูลผู้ใช้
+            
             row.innerHTML = `
                 <td>${user.id}</td>
                 <td>${user.firstName}</td>
                 <td>${user.lastName}</td>
                 <td>${user.age}</td>
                 <td>${user.gender}</td>
-                <td>${user.interests}</td>
+                <td>${user.interests.join(', ')}</td>
                 <td>${user.description}</td>
                 <td>
-                    <a href="index.html?id=${user.id}">
-                        <button class="edit">Edit</button>
-                    </a>
-                    <button class="delete" data-id="${user.id}">Delete</button>
+                    <button onclick="editUser(${user.id})">Edit</button>
+                    <button onclick="deleteUser(${user.id})">Delete</button>
                 </td>
             `;
 
-            // ปุ่ม Delete
-            const deleteButton = row.querySelector('.delete');
-            deleteButton.addEventListener('click', async (event) => {
-                const id = event.target.dataset.id;
-                deleteButton.disabled = true; // ปิดปุ่ม Delete ชั่วคราว
-                try {
-                    await axios.delete(`${BASE_URL}/users/${id}`);
-                    await loadData(); // โหลดข้อมูลใหม่
-                } catch (error) {
-                    console.error('Error deleting user:', error);
-                } finally {
-                    deleteButton.disabled = false; // เปิดปุ่ม Delete อีกครั้ง
-                }
-            });
-
             tableBody.appendChild(row);
         });
-
     } catch (error) {
         console.error('Error loading users:', error);
+    }
+};
+
+// ฟังก์ชันแก้ไขข้อมูลผู้ใช้
+const editUser = (id) => {
+    // ให้เปิดหน้าแก้ไข หรือทำการนำข้อมูลที่จะแก้ไขมาแสดง
+    window.location.href = `editUser.html?id=${id}`;
+};
+
+// ฟังก์ชันลบข้อมูลผู้ใช้
+const deleteUser = async (id) => {
+    try {
+        const response = await axios.delete(`${BASE_URL}/users/${id}`);
+        alert('User deleted successfully');
+        window.location.reload(); // รีโหลดข้อมูลใหม่หลังจากลบ
+    } catch (error) {
+        console.error('Error deleting user:', error);
+        alert('Error deleting user');
     }
 };
